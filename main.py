@@ -58,5 +58,3 @@ if __name__ == '__main__':
     input_path = input('MP4存储地址: ')
     mp4_path = input_path.replace('\\', "/")
     get_mp4_ts(ts_path, mp4_path)
-
-#作者：paleblue111 https://www.bilibili.com/read/cv16138495/ 出处：bilibili
