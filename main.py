@@ -25,6 +25,8 @@ if __name__ == '__main__':
     i = 1
     j = 1
     filename = input('合并视频名称：')
+    f = open("%s.ts"%filename, "w")
+    f.close()
     firsturl = input('虎牙m3u8地址: ')
     input_path = input('m3u8文档地址: ')
     m3u8_path = input_path.replace('\\', "/")
@@ -39,9 +41,9 @@ if __name__ == '__main__':
     for line in lines:
         if len(line)>150:
             download(line,str(i), firsturl)
-            i=i+1
             print("合并进度: ", i, "/", j)
-    os.system('copy /b *.ts %s.ts'%filename)
+            os.system('type %s.ts >> %s.ts'%(str(i), filename))
+            i=i+1
     print('下载并合并完成')
 
     i = i-1
